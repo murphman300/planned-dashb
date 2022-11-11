@@ -1,0 +1,37 @@
+html {
+  color: #0B223C;
+  width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #0B223C;
+  font-size: 1em;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+}
+
+.planned-cta-button {
+  cursor: pointer;
+}
+
+.floating-box {
+  max-width: 250px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(11, 34, 60, 0.94);
+  color: white;
+  z-index: 100;
+  position:absolute;
+  margin: 0;
+}

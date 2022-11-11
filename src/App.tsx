@@ -1,21 +1,35 @@
 import React from 'react';
-import styled from 'styled-components';
+import FiltersBoxComponent from "./components/FiltersBoxComponent";
+import UserTableComponent from "./components/UsersTable/UserTableComponent";
+import {ContentContainer, ContentSectionContainer} from "./components/ContentContainer";
+import {HeaderMenuTitleP} from "./themes/components";
+import {AppHeader, AppParentContainer} from "./themes/containers";
+import {HandleMouseMove} from "./utils/listeners/mousemove";
 
-const API_URL = 'http://localhost:8099'
+/**
+ * Inspired by float-ui's approach
+ * ran into bugs living in the dependency itself...
+ */
+document.addEventListener("mousemove", HandleMouseMove);
 
 function App() {
+
   return (
     <div className="App">
-      <h1>Planned Test</h1>
-      <div>
-        <button type="button">Retrieve Users</button>
-      </div>
-      <div>
-        <h2>Users</h2>
-        min: <input name="minAge" value="0" type="number" />
-        max: <input name="maxAge" value="100" type="number" />
-        <button type="button">Filter by age</button>
-      </div>
+      <AppParentContainer>
+        <AppHeader>
+          <div style={{height: 100, width: 100}}>
+            <img src={'/logo.svg'} alt={"planned-logo-alt"} style={{height: '100%', width: '100%'}}/>
+          </div>
+          <HeaderMenuTitleP>Planned test</HeaderMenuTitleP>
+        </AppHeader>
+        <ContentContainer>
+          <ContentSectionContainer title={'Users'}>
+            <FiltersBoxComponent/>
+            <UserTableComponent/>
+          </ContentSectionContainer>
+        </ContentContainer>
+      </AppParentContainer>
     </div>
   );
 }
